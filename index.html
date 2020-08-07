@@ -1,93 +1,47 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>满屏小心心</title>
-    <style type="text/css">
-      body{
-        margin: 0;
-        overflow: hidden;
-        background: #303035;
-      }
-    </style>
-  </head>
-  <body>
-    <canvas></canvas>
-    <div id="container" class="container"></div>
+<html manifest="manifest.appcache">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0, minimal-ui"/>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <title>Fay Fire Adventure</title>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" charset="utf-8"></script>
-    <script type="text/javascript">
-      var canvas = document.querySelector("canvas");
-      var ctx = canvas.getContext("2d");
-
-      var ww = window.innerWidth;
-      var wh = window.innerHeight;
-
-      var hearts = [];
-
-      function init(){
-        requestAnimationFrame(render);
-        canvas.width = ww;
-        canvas.height = wh;
-        for(var i = 0; i < 100; i++){
-          hearts.push(new Heart());
-        }
-      }
-
-      function Heart() {
-        this.x = Math.random() * ww;
-        this.y = Math.random() * wh;
-        this.opacity = (Math.random() * 0.5) + 0.5;
-        this.vel = {
-          x: (Math.random() - 0.5) * 4,
-          y: (Math.random() - 0.5) * 4
-        };
-        this.targetScale = (Math.random() * 0.15) + 0.02;
-        this.scale = this.targetScale * Math.random();
-      }
-
-      Heart.prototype.update = function(){
-        this.x += this.vel.x;
-        this.y += this.vel.y;
-
-        this.scale += (this.targetScale - this.scale) * 0.01;
-        if(this.x - this.width > ww || this.x + this.width < 0){
-          this.scale = 0;
-          this.x = Math.random() * ww;
-        }
-        if(this.y - this.height > wh || this.y + this.height < 0){
-          this.scale = 0;
-          this.y = Math.random() * wh;
-        }
-        this.width = 473.8 * this.scale;
-        this.height = 408.6 * this.scale;
-      }
-      Heart.prototype.draw = function(){
-        ctx.globalAlpha = this.opacity;
-        ctx.drawImage(heartImage, this.x - this.width * 0.5, this.y - this.height * 0.5,this.width, this.height);
-      }
-
-      function render(){
-        ctx.clearRect(0, 0, ww, wh);
-        // ctx.globalAlpha = 1;
-        // ctx.fillStyle = "rgba(255,255,255,0.3)";
-        // ctx.fillRect(0, 0, ww, wh);
-        for(var i=0; i<100; i++){
-          hearts[i].update();
-          hearts[i].draw();
-        }
-        requestAnimationFrame(render);
-      }
-
-      var heartImage = new Image();
-      heartImage.onload = init();
-      heartImage.src =  "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NzMuOHB4IiBoZWlnaHQ9IjQwOC42cHgiIHZpZXdCb3g9IjAgMCA0NzMuOCA0MDguNiI+PHBhdGggZmlsbD0iI2QzMjkzMiIgZD0iTTQwNC42LDE2LjZDMzg1LjQsNi4xLDM2My41LDAsMzQwLDBjLTQxLjUsMC03OC41LDE4LjktMTAzLDQ4LjVDMjEyLjMsMTguOSwxNzUuMywwLDEzMy44LDAgYy0yMy4zLDAtNDUuMyw2LjEtNjQuNSwxNi42QzI3LjksMzkuNSwwLDgzLjQsMCwxMzMuOWMwLDE0LjQsMi40LDI4LjMsNi42LDQxLjJDMjkuNiwyNzguNCwyMzcsNDA4LjYsMjM3LDQwOC42IHMyMDcuMi0xMzAuMiwyMzAuMi0yMzMuNWM0LjMtMTIuOSw2LjYtMjYuOCw2LjYtNDEuMkM0NzMuOCw4My40LDQ0NS45LDM5LjYsNDA0LjYsMTYuNnoiLz48L3N2Zz4=";
-
-      window.addEventListener("resize",function(){
-        ww = window.innerWidth;
-        wh = window.innerHeight;
-      })
+    <script src="jquery-1.11.1.min.js"></script>
+    <script src="wade_2.0.js"></script>
+    <script src="wade.ifx_1.0.js"></script>
+    <script src="wade.particles_1.0.1.js"></script>
+    <script>
+        $(document).ready(function()
+        {
+           wade.init('ss.min.js');
+        });
 
     </script>
-  </body>
+</head>
+
+<body>
+
+<div id="container" style="border:0; width:800px; height:600px;">
+    <div id="wade_main_div" width="800" height="600" tabindex="1">
+    </div>
+</div>
+
+<div>
+    <p style="font: 1px aluso">Chrome fix</p>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-42206657-3', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+</body>
 </html>
