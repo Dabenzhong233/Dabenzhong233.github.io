@@ -1,0 +1,57 @@
+{
+    "day":
+    {
+        "background": "resources/day.jpeg",
+        "tower": "resources/watchtower_normal.png",
+        "backgroundElement": "resources/day_tree.png",
+        "foregroundSprites": ["resources/groddle_flower_1.png", "resources/groddle_flower_2.png", "resources/groddle_flower_3.png", "resources/groddle_flower_4.png", "resources/groddle_grass_1.png", "resources/groddle_grass_2.png"],
+        "flyingEnemy": ["resources/blight_blue_Flying_side_left.png", "resources/blight_blue_Death_side_left.png", "resources/blight_red_Flying_side_left.png", "resources/blight_red_Death_side_left.png", "resources/blight_purple_Flying_side_left.png", "resources/blight_purple_Death_side_left.png"],
+        "skyObstacle": "resources/cloud_thunder.png"
+    },
+
+    "tropical":
+    {
+        "background": "resources/tropical.jpeg",
+        "tower": ["resources/beach_sandcastle1.png", "resources/beach_sandcastle2.png"],
+        "backgroundElement": "resources/tropical_PalmTree.png",
+        "foregroundSprites": ["resources/beach_spade.png", "resources/beach_bucket.png", "resources/beach_starfish.png", "resources/beach_seashell.png", "resources/beach_Ball.png"],
+        "skyObstacle": "resources/beach_kite.png"
+
+    },
+
+    "snow":
+    {
+        "background": "resources/snow.jpeg",
+        "tower": "resources/snow_manbig.png",
+        "backgroundElement": "resources/snowTree.png",
+        "foregroundSprites": ["resources/beach_spade.png", "resources/beach_bucket.png", "resources/beach_starfish.png", "resources/beach_seashell.png", "resources/beach_Ball.png"],
+        "skyObstacle": ["resources/snow_icicle1.png", "resources/snow_icicle2.png", "resources/snow_icicle3.png"]
+    },
+
+    "forest":
+    {
+        "background": "resources/forest.jpeg",
+        "tower": "resources/foresttower.png",
+        "backgroundElement": "resources/dar_treeDark.png",
+        "foregroundSprites": ["resources/forrestBush.png", "resources/caveRockSmall.png"],
+        "skyObstacle": "resources/cloud_thunder.png"
+    },
+
+    "desert":
+    {
+        "background": "resources/desert.jpeg",
+        "tower": "resources/deserttower.png",
+        "backgroundElement": "resources/desertCactus1.png",
+        "foregroundSprites": ["resources/desertBush.png", "resources/caveRockSmall.png"],
+        "skyObstacle": ["resources/snow_icicle1.png", "resources/snow_icicle2.png", "resources/snow_icicle3.png"]
+    },
+
+    "night":
+    {
+        "background": "resources/night.jpeg",
+        "tower": "resources/nighttower.png",
+        "backgroundElement": "resources/nightTree.png",
+        "foregroundSprites": ["resources/nightBush.png", "resources/nightBushFlower.png", "resources/caveRockSmall.png"],
+        "skyObstacle": "resources/cloud_thunder.png"
+    }
+}
